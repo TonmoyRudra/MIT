@@ -1,0 +1,25 @@
+<span>Total MIT applicant: {{mitList.length}}</span>
+<span style="margin-left: 25px;">Total PGIT applicant: {{pgitList.length}}</span>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Serial No</th>
+    <th>Application Type</th>
+    <th>Applicant Name</th>
+    <th>Roll No</th>
+    <th>Payment Status</th>
+    <th>Photo</th>
+  </tr>
+  <tr *ngFor="let user of applicantList">
+      <td>{{user.id}}</td>
+      <td>{{user.serialNo}}</td>
+      <td>{{user.applicationType}}</td>
+      <td>{{user.applicantName}}</td>
+      <td>{{user.rollNo}}</td>
+      <td *ngIf="user.paymentStatus" style="color: green">{{user.paymentStatus}}</td>
+      <td *ngIf="!user.paymentStatus" style="color: red">{{user.paymentStatus}}</td>
+      <td><img src="http://139.59.13.79:5007/upload/{{user.photoFileName}}" style="width: 20%;"/></td>
+      
+  </tr>
+  
+</table>
